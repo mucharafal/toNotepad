@@ -1,5 +1,3 @@
-import scala.Int;
-
 import java.util.*;
 
 public class State {
@@ -18,8 +16,8 @@ public class State {
         int lineNumber = 0;
         List<Difference> result = new LinkedList<>();
 
-        String thisLine = "";
-        String thatLine = "";
+        String thisLine;
+        String thatLine;
 
         while (thisScanner.hasNextLine() && thatScanner.hasNextLine())
         {
@@ -49,6 +47,13 @@ public class State {
         }
 
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Saved: " + date + "\n"
+            + text;
+
     }
 
     @Override

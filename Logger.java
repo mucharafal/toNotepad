@@ -5,7 +5,7 @@ import java.util.List;
 public class Logger {
     private Writer writer;
 
-    public Logger(Writer writer) throws IOException{
+    public Logger(Writer writer){
         this.writer = writer;
     }
 
