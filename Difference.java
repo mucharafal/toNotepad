@@ -11,7 +11,7 @@ public class Difference {
 
     @Override
     public String toString() {
-        return "Change in line" + line
+        return "Change in line " + line
                 + ", old: " + oldText
                 + " new: " + newText;
     }

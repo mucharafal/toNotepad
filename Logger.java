@@ -12,13 +12,15 @@ public class Logger {
 
     public void log(List<Difference> differences) throws IOException
     {
-        try(Writer writer = new FileWriter(filename))
+        try(Writer writer = new FileWriter(filename, true))
         {
             for (Difference d: differences)
             {
                 writer.append(d.toString());
                 writer.append("\n");
             }
+
+            writer.append("\n");
         }
         catch(IOException e){
             e.printStackTrace();

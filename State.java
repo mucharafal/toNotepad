@@ -21,8 +21,8 @@ public class State {
 
         while (thisScanner.hasNextLine() && thatScanner.hasNextLine())
         {
-            thisLine = thatScanner.nextLine();
-            thatLine = thisScanner.nextLine();
+            thisLine = thisScanner.nextLine();
+            thatLine = thatScanner.nextLine();
 
             if (!thisLine.equals(thatLine))
             {
