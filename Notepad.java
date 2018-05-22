@@ -8,7 +8,7 @@ public class Notepad {
     private int currentState;
     private Logger logger;
 
-    public Notepad(String loggerFilename) throws IOException{
+    public Notepad(String loggerFilename){
         states = new LinkedList<>();
         states.add(new State(""));
         currentState = 0;
