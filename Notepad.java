@@ -8,11 +8,11 @@ public class Notepad {
     private int currentState;
     private Logger logger;
 
-    public Notepad() throws IOException{
+    public Notepad(String loggerFilename) throws IOException{
         states = new LinkedList<>();
         states.add(new State(""));
         currentState = 0;
-        logger = new Logger(new FileWriter("log.txt"));
+        logger = new Logger(loggerFilename);
     }
 
     public void save(String text) throws IOException{

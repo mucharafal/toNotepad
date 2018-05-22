@@ -1,32 +1,28 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
 public class Logger {
-    private Writer writer;
+    private String filename;
 
-    public Logger(Writer writer){
-        this.writer = writer;
+    public Logger(String filename){
+        this.filename = filename;
     }
 
     public void log(List<Difference> differences) throws IOException
     {
-        try
+        try(Writer writer = new FileWriter(filename))
         {
             for (Difference d: differences)
             {
                 writer.append(d.toString());
                 writer.append("\n");
             }
-
         }
-
-        catch (IOException e)
-        {
-            throw new IOException("Cannot log. Cause: " + e);
+        catch(IOException e){
+            e.printStackTrace();
         }
-
-
     }
 }
 
