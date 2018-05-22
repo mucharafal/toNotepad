@@ -16,16 +16,25 @@ public class Notepad {
     }
 
     public void save(String text) throws IOException{
+        while(this.states.size() > currentState){
+            this.states.remove(this.currentState);
+        }
         states.add(currentState + 1, new State(text));
         currentState++;
         logger.log(states.get(currentState - 1).getDifferences(states.get(currentState)));
     }
 
     public void undo() {
-        currentState--;
+        if(currentState > 0)
+            currentState--;
     }
 
     public void redo() {
-        currentState++;
+        if(currentState < states.size() - 1)
+            currentState++;
+    }
+
+    public State getCurrentState(){
+        return states.get(currentState);
     }
 }
